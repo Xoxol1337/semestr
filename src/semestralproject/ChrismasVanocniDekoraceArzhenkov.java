@@ -16,9 +16,9 @@ public class ChrismasVanocniDekoraceArzhenkov {
         Scanner sc = new Scanner(System.in);
         boolean work = true;
         while (work) {
-            System.out.print("Zadej radius: ");
-                int radius = sc.nextInt();
             while (true) {
+                System.out.print("Zadej radius: ");
+                int radius = sc.nextInt();
                 if (radius == 1) {
                     System.out.println("Prilis maly radius, zruste znovu");
                     break;
