@@ -8,19 +8,34 @@ import java.util.Scanner;
 
 public class ChrismasVanocniDekoraceArzhenkov {
 
+    public static void main(String[] args) {
+        Xmas();
+    }
+
     public static void Xmas() {
         Scanner sc = new Scanner(System.in);
         boolean work = true;
         while (work) {
             System.out.print("Zadej radius: ");
-            int radius = sc.nextInt();
-            if (radius <= 0) {
-                work = false;
-                break;
-            }
-            char outside = ('$');
-            char firstSymbol = ('*');
-            char secondSymbol = ('#');
+                int radius = sc.nextInt();
+            while (true) {
+                if (radius == 1) {
+                    System.out.println("Prilis maly radius, zruste znovu");
+                    break;
+                } else if (radius <= 0) {
+                    work = false;
+                    break;
+                }
+            
+            System.out.println("Zadej vnejsi plochu: ");
+            /*char outside = ('$');*/
+            char outside = sc.next().charAt(0);
+            System.out.println("Zadej prvni barvu: ");
+            /*char firstSymbol = ('*');*/
+            char firstSymbol = sc.next().charAt(0);
+            System.out.println("Zadej druhu barvu: ");
+            /*char secondSymbol = ('#');*/
+            char secondSymbol = sc.next().charAt(0);
 
             hook(radius, outside);
             drawCircle(radius, firstSymbol, secondSymbol, outside);
@@ -30,8 +45,12 @@ public class ChrismasVanocniDekoraceArzhenkov {
             }
             System.out.print(outside);
             System.out.println("");
-        }
+            }
+            if (!work) {
+                break;
+            }
 
+        }
     }
 
     public static void hook(int radius, char outside) {
